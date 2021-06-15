@@ -8,5 +8,6 @@
   "diagnostic.messageTarget": "float",
   "suggest.floatEnable": true,
   "java.import.gradle.enabled": true,
-  "java.import.gradle.wrapper.enabled": true
+  "java.import.gradle.wrapper.enabled": true,
+  "coc.preferences.extensionUpdateCheck": "daily"
 }
