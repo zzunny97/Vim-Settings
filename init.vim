@@ -1,5 +1,4 @@
 set nocompatible " vi와 호환하지 않음. 다른 옵션값들에 영향을 줌.
-
 " 파일의 타입에 맞게 indent를 조절
 if has("filetype")
     filetype indent plugin on
@@ -22,7 +21,7 @@ set nowrapscan " 검색할 때 문서의 끝에서 처음으로 안돌아감
 " Indent stuffs
 set smartindent "자동 들여쓰기 시 #include 와 같은 전처리 구문을 판단하여 들여쓰기 안함
 set autoindent
-set cindent " C style indent
+" set cindent " C style indent
 set shiftwidth=4 " 자동 인덴트할 때 스페이스 설정값
 set ts=4 " Tab을 출력시 몇 개의 스페이스를 보여줄지에 대한 설정값
 set sts=4 " Tab 키를 눌렀을 때 몇 개의 스페이스를 입력할 것인지에 대한 설정값
@@ -62,12 +61,50 @@ au BufReadPost *
 \ exe "norm g`\"" |
 \ endif
 
-" ============================ Plugin Stuffs ========================================== "
+" ============================ Plugin Stuffs ========================================== 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-airline'
 Plug 'preservim/nerdcommenter'
 Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
+Plug 'artur-shaik/vim-javacomplete2'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-colorscheme gruvbox
+" colorscheme jellybeans 
+colorscheme gruvbox 
+
+nnoremap <space>h <C-w>h
+nnoremap <space>j <C-w>j
+nnoremap <space>k <C-w>k
+nnoremap <space>l <C-w>l
+
+
+" vim-javacomplete2
+  nmap <leader>jI <Plug>(JavaComplete-Imports-AddMissing)
+  nmap <leader>jR <Plug>(JavaComplete-Imports-RemoveUnused)
+  nmap <leader>ji <Plug>(JavaComplete-Imports-AddSmart)
+  nmap <leader>jii <Plug>(JavaComplete-Imports-Add)
+  imap <C-j>I <Plug>(JavaComplete-Imports-AddMissing)
+  imap <C-j>R <Plug>(JavaComplete-Imports-RemoveUnused)
+  imap <C-j>i <Plug>(JavaComplete-Imports-AddSmart)
+  imap <C-j>ii <Plug>(JavaComplete-Imports-Add)
+  nmap <leader>jM <Plug>(JavaComplete-Generate-AbstractMethods)
+  imap <C-j>jM <Plug>(JavaComplete-Generate-AbstractMethods)
+  nmap <leader>jA <Plug>(JavaComplete-Generate-Accessors)
+  nmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
+  nmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
+  nmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
+  nmap <leader>jts <Plug>(JavaComplete-Generate-ToString)
+  nmap <leader>jeq <Plug>(JavaComplete-Generate-EqualsAndHashCode)
+  nmap <leader>jc <Plug>(JavaComplete-Generate-Constructor)
+  nmap <leader>jcc <Plug>(JavaComplete-Generate-DefaultConstructor)
+  imap <C-j>s <Plug>(JavaComplete-Generate-AccessorSetter)
+  imap <C-j>g <Plug>(JavaComplete-Generate-AccessorGetter)
+  imap <C-j>a <Plug>(JavaComplete-Generate-AccessorSetterGetter)
+  vmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
+  vmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
+  vmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
+  nmap <silent> <buffer> <leader>jn <Plug>(JavaComplete-Generate-NewClass)
+  nmap <silent> <buffer> <leader>jN <Plug>(JavaComplete-Generate-ClassInFile)

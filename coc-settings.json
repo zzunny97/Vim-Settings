@@ -1,0 +1,12 @@
+{
+  "suggest.triggerAfterInsertEnter": true,
+  "suggest.noselect": false,
+  "suggest.minTriggerInputLength": 2,
+  "suggest.acceptSuggestionOnCommitCharacter": true,
+  "suggest.snippetIndicator": "►",
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
+  "diagnostic.messageTarget": "float",
+  "suggest.floatEnable": true,
+  "java.import.gradle.enabled": true,
+  "java.import.gradle.wrapper.enabled": true
+}
