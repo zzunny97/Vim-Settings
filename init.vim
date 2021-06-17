@@ -67,6 +67,8 @@ nnoremap <space>h <C-w>h
 nnoremap <space>j <C-w>j
 nnoremap <space>k <C-w>k
 nnoremap <space>l <C-w>l
+nnoremap <space>[ :bp<CR>
+nnoremap <space>] :bn<CR>
 
 
 " 코드 저장시 행 끝에 붙은 공백 제거
@@ -95,10 +97,16 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'junegunn/fzf'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'derekwyatt/vim-scala'
 call plug#end()
 
 " colorscheme jellybeans
 colorscheme gruvbox
+
+"CtrlP
+nnoremap <space>p :CtrlP<CR>
 
 " Coc Explorer
 nnoremap <space>e :CocCommand explorer<CR>
@@ -108,6 +116,8 @@ nnoremap <space>oc :e ~/.config/nvim/init.vim<CR>
 
 " Tagbar
 nmap <space>tb :TagbarToggle<CR>
+
+let mapleader = " "
 
 let g:airline#extensions#tabline#enabled = 1 " Turn on buffer list
 
